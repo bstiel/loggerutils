@@ -1,7 +1,7 @@
 loggingutils
 ------------
 
-loggingutils provides a drop-in replacement for the `logging.Formatter` class. loggingutils enriches the log message with extra information when running inside a Celery task.
+loggingutils is a Python package that provides a drop-in replacement for the `logging.Formatter` class. loggingutils enriches the log message with extra information when running inside a Celery task.
 
 Configure your logger using the `loggingutils.Formatter` class:
 
