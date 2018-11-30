@@ -10,6 +10,7 @@ install:
 - python setup.py install
 script: nosetests
 deploy:
+  provider: pypi
   user: $USERNAME
   password: $PASSWORD
   on:
