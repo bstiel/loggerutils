@@ -8,7 +8,7 @@ setup(name='loggingutils',
       author_email='bjoern.stiel@distributedpython.com',
       license='BSD-3-Clause',
       packages=['loggingutils'],
-      python_requires=">=3.0",
+      python_requires=">=3.3",
       test_suite='nose.collector',
       tests_require=['nose'],
       install_requires=[
