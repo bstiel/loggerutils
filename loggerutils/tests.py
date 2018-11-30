@@ -3,7 +3,7 @@ import logging
 
 from unittest import mock
 from freezegun import freeze_time
-from loggingutils import Formatter
+from loggerutils import Formatter
 
 
 class TestCase(unittest.TestCase):
