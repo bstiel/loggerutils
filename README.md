@@ -1,17 +1,17 @@
-loggingutils
+loggerutils
 ------------
 
-loggingutils is a Python package that provides a drop-in replacement for the `logging.Formatter` class. loggingutils enriches the log message with extra information when running inside a Celery task.
+loggerutils is a Python package that provides a drop-in replacement for the `logging.Formatter` class. loggerutils enriches the log message with extra information when running inside a Celery task.
 
-Configure your logger using the `loggingutils.Formatter` class:
+Configure your logger using the `loggerutils.Formatter` class:
 
 ```python
 import logging
-import loggingutils
+import loggerutils
 
 logger = logging.getLogger()
 sh = logging.StreamHandler()
-sh.setFormatter(loggingutils.Formatter('%(asctime)s - %(task_id)s - %(task_name)s - %(name)s - %(levelname)s - %(message)s'))
+sh.setFormatter(loggerutils.Formatter('%(asctime)s - %(task_id)s - %(task_name)s - %(name)s - %(levelname)s - %(message)s'))
 logger.setLevel(logging.INFO)
 logger.addHandler(sh)
 ```
@@ -56,11 +56,11 @@ When calling `do_something` from somewhere outside Celery, you get:
 2018-11-06 07:33:16,140 -  -  - tasks - INFO - Do something
 ```
 
-loggingutils extends the built-in Formatter styles (PercentStyle (`%`), StrFormatStyle (`{`) and StringTemplateStyle (`$`)) with Jinja2Style (`{{`). Jinja2Style leverages [Jinja2 templates](http://jinja.pocoo.org/docs/2.10/) and allows you to use conditions to prettify your log messages:
+loggerutils extends the built-in Formatter styles (PercentStyle (`%`), StrFormatStyle (`{`) and StringTemplateStyle (`$`)) with Jinja2Style (`{{`). Jinja2Style leverages [Jinja2 templates](http://jinja.pocoo.org/docs/2.10/) and allows you to use conditions to prettify your log messages:
 
 ```python
 ...
-sh.setFormatter(loggingutils.Formatter('{{asctime}}{% if task_id %} - {{task_id}} - {{task_name}}{% endif %} - {{name}} - {{levelname}} - {{message}}', style='{{'))
+sh.setFormatter(loggerutils.Formatter('{{asctime}}{% if task_id %} - {{task_id}} - {{task_name}}{% endif %} - {{name}} - {{levelname}} - {{message}}', style='{{'))
 ...
 ```
 
@@ -135,7 +135,7 @@ For debugging, it is helpful to get a task id and task name if the model code ru
 Requirements
 ------------
 
-loggingutils currently works with:
+loggerutils currently works with:
 
 * Python 3.6+
 
@@ -147,7 +147,7 @@ Installation
 To install Requests, simply use [pip](https://packaging.python.org/tutorials/installing-packages/) (or [pipenv](http://pipenv.org/):
 
 ``` {.sourceCode .bash}
-$ pip install loggingutils
+$ pip install loggerutils
 ✨🍰✨
 ```
 
