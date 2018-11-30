@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='loggerutils',
-      version='0.1.0',
+      version='0.3.0',
       description='Celery optimised log formatter',
       url='http://github.com/bstiel/loggerutils',
       author='Bjoern Stiel',
